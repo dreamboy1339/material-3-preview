@@ -1,4 +1,4 @@
-package com.hjw.app.material3preview
+package com.hjw.app.material3preview.screen
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite

@@ -1,4 +1,4 @@
-package com.hjw.app.material3preview
+package com.hjw.app.material3preview.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -18,6 +18,7 @@ import com.hjw.app.material3preview.component.LoadingIndicators
 import com.hjw.app.material3preview.component.MultiSelectConnectedButtonGroup
 import com.hjw.app.material3preview.component.SingleSelectConnectedButtonGroups
 import com.hjw.app.material3preview.component.SplitButtons
+import com.hjw.app.material3preview.ui.Title
 
 @Composable
 fun ComponentsScreen(

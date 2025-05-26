@@ -9,8 +9,8 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun SplitButtons() {
     FilledSplitButton()
-    Spacer(modifier = Modifier.Companion.size(8.dp))
+    Spacer(modifier = Modifier.size(8.dp))
     ElevatedSplitButton()
-    Spacer(modifier = Modifier.Companion.size(8.dp))
+    Spacer(modifier = Modifier.size(8.dp))
     OutlinedSplitButton()
 }
