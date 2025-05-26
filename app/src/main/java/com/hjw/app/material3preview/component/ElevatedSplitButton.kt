@@ -18,15 +18,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.hjw.app.material3preview.ui.theme.Material3PreviewTheme
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun FilledSplitButton() {
+@Preview(showBackground = true)
+fun ElevatedSplitButton() {
     var checked by remember { mutableStateOf(false) }
+
     SplitButtonLayout(
         leadingButton = {
-            SplitButtonDefaults.LeadingButton(
+            SplitButtonDefaults.ElevatedLeadingButton(
                 onClick = { /* */ },
             ) {
                 Icon(
@@ -35,11 +36,11 @@ fun FilledSplitButton() {
                     contentDescription = "",
                 )
                 Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-                Text("My Filled Split Button")
+                Text("My Elevated Split Button")
             }
         },
         trailingButton = {
-            SplitButtonDefaults.TrailingButton(
+            SplitButtonDefaults.ElevatedTrailingButton(
                 checked = checked,
                 onCheckedChange = { checked = it },
             ) {
@@ -48,14 +49,5 @@ fun FilledSplitButton() {
                     contentDescription = ""
                 )
             }
-        }
-    )
-}
-
-@Preview
-@Composable
-private fun FilledSplitButtonPreview() {
-    Material3PreviewTheme {
-        FilledSplitButton()
-    }
+        })
 }

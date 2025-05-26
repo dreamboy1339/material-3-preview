@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.hjw.app.material3preview.component.ElevatedSplitButton
 import com.hjw.app.material3preview.component.FilledSplitButton
 import com.hjw.app.material3preview.component.LoadingIndicators
 import com.hjw.app.material3preview.ui.theme.Material3PreviewTheme
@@ -40,6 +41,8 @@ class MainActivity : ComponentActivity() {
 
                         Title(name = "Filled Split Button")
                         FilledSplitButton()
+                        Spacer(modifier = Modifier.size(8.dp))
+                        ElevatedSplitButton()
                         Spacer(modifier = Modifier.size(12.dp))
                     }
                 }
