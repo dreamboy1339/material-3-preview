@@ -7,8 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -21,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.hjw.app.material3preview.component.ButtonGroups
 import com.hjw.app.material3preview.component.FloatingActionButtonMenus
 import com.hjw.app.material3preview.component.LoadingIndicators
 import com.hjw.app.material3preview.component.SplitButtons
@@ -53,6 +52,11 @@ class MainActivity : ComponentActivity() {
 
                         Title(name = "Floating Action Button Menus")
                         FloatingActionButtonMenus()
+
+                        Spacer(modifier = Modifier.size(12.dp))
+
+                        Title(name = "Button Group")
+                        ButtonGroups()
                     }
                 }
             }
