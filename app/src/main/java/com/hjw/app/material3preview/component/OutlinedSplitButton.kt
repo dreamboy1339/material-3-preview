@@ -21,10 +21,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.hjw.app.material3preview.ui.theme.Material3PreviewTheme
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-@Preview(showBackground = true)
 fun OutlinedSplitButton() {
 
     var checked by remember { mutableStateOf(false) }
@@ -68,4 +68,12 @@ fun OutlinedSplitButton() {
                 )
             }
         })
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun OutlinedSplitButtonPreview() {
+    Material3PreviewTheme {
+        OutlinedSplitButton()
+    }
 }

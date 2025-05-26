@@ -22,7 +22,6 @@ import com.hjw.app.material3preview.ui.theme.Material3PreviewTheme
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-@Preview(showBackground = true)
 fun ElevatedSplitButton() {
     var checked by remember { mutableStateOf(false) }
 
@@ -55,7 +54,7 @@ fun ElevatedSplitButton() {
 
 @Preview
 @Composable
-private fun ElevatedSplitButtionPreview() {
+private fun ElevatedSplitButtonPreview() {
     Material3PreviewTheme {
         ElevatedSplitButton()
     }
