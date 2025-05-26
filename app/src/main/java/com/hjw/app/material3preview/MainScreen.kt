@@ -12,6 +12,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.hjw.app.material3preview.screen.BottomNavItem
 import com.hjw.app.material3preview.screen.ComponentsScreen
+import com.hjw.app.material3preview.screen.FlexibleBottomAppBarExScreen
 import com.hjw.app.material3preview.screen.HorizontalFloatingToolbarWithFabScreen
 import com.hjw.app.material3preview.screen.OverflowingVerticalFloatingToolbarSample
 import com.hjw.app.material3preview.ui.AppBottomNavigationBar
@@ -23,7 +24,8 @@ fun MainScreen() {
     val items = listOf(
         BottomNavItem.Components,
         BottomNavItem.VerticalFloatingToolbar,
-        BottomNavItem.HorizontalFloatingToolbar
+        BottomNavItem.HorizontalFloatingToolbar,
+        BottomNavItem.FlexibleBottomAppBarEx
     )
 
     Scaffold(
@@ -60,6 +62,9 @@ fun MainScreen() {
             }
             composable(BottomNavItem.HorizontalFloatingToolbar.route) {
                 HorizontalFloatingToolbarWithFabScreen()
+            }
+            composable(BottomNavItem.FlexibleBottomAppBarEx.route) {
+                FlexibleBottomAppBarExScreen()
             }
         }
     }
