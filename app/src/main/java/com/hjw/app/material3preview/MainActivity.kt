@@ -53,7 +53,7 @@ fun Title(name: String, modifier: Modifier = Modifier) {
     Text(
         modifier = modifier,
         style = MaterialTheme.typography.headlineSmall,
-        text = "Hello $name!"
+        text = name
     )
 }
 
