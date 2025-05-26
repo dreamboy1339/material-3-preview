@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import com.hjw.app.material3preview.component.ButtonGroups
 import com.hjw.app.material3preview.component.FloatingActionButtonMenus
 import com.hjw.app.material3preview.component.LoadingIndicators
+import com.hjw.app.material3preview.component.MultiSelectConnectedButtonGroup
 import com.hjw.app.material3preview.component.SingleSelectConnectedButtonGroups
 import com.hjw.app.material3preview.component.SplitButtons
 import com.hjw.app.material3preview.ui.theme.Material3PreviewTheme
@@ -68,6 +69,11 @@ class MainActivity : ComponentActivity() {
 
                         Title(name = "Single Select Connected Button Group")
                         SingleSelectConnectedButtonGroups()
+
+                        Spacer(modifier = Modifier.size(12.dp))
+
+                        Title(name = "Multi Select Connected Button Group")
+                        MultiSelectConnectedButtonGroup()
                     }
                 }
             }
