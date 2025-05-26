@@ -7,9 +7,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -17,11 +20,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.hjw.app.material3preview.component.ButtonGroups
 import com.hjw.app.material3preview.component.FloatingActionButtonMenus
 import com.hjw.app.material3preview.component.LoadingIndicators
+import com.hjw.app.material3preview.component.SingleSelectConnectedButtonGroups
 import com.hjw.app.material3preview.component.SplitButtons
 import com.hjw.app.material3preview.ui.theme.Material3PreviewTheme
 
@@ -57,6 +63,11 @@ class MainActivity : ComponentActivity() {
 
                         Title(name = "Button Group")
                         ButtonGroups()
+
+                        Spacer(modifier = Modifier.size(12.dp))
+
+                        Title(name = "Single Select Connected Button Group")
+                        SingleSelectConnectedButtonGroups()
                     }
                 }
             }
@@ -67,9 +78,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Title(name: String, modifier: Modifier = Modifier) {
     Text(
-        modifier = modifier,
+        modifier = modifier.fillMaxWidth().height(50.dp),
+        text = name,
         style = MaterialTheme.typography.headlineSmall,
-        text = name
+        textAlign = TextAlign.Center,
+        overflow = TextOverflow.Visible,
+        autoSize = TextAutoSize.StepBased()
     )
 }
 
@@ -77,6 +91,6 @@ fun Title(name: String, modifier: Modifier = Modifier) {
 @Composable
 private fun TitlePreview() {
     Material3PreviewTheme {
-        Title(name = "Android")
+        Title(name = "Android Android Android")
     }
 }
