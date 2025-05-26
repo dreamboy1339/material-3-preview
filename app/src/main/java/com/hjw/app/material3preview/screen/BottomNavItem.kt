@@ -11,5 +11,9 @@ sealed class BottomNavItem(val route: String, val label: String, val icon: Image
     object VerticalFloatingToolbar :
         BottomNavItem("verticalfloatingtoolbar", "VerticalFloatingToolbar", Icons.Filled.Rectangle)
 
-    object Settings : BottomNavItem("settings", "Settings", Icons.Filled.Settings)
+    object HorizontalFloatingToolbar : BottomNavItem(
+        "horizontalfloatingtoolbar",
+        "HorizontalFloatingToolbar",
+        Icons.Filled.Settings
+    )
 }
