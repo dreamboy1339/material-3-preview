@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.hjw.app.material3preview.component.FilledSplitButton
 import com.hjw.app.material3preview.component.LoadingIndicators
 import com.hjw.app.material3preview.ui.theme.Material3PreviewTheme
 
@@ -28,14 +29,13 @@ class MainActivity : ComponentActivity() {
                     Column(
                         modifier = Modifier
                             .padding(innerPadding)
-                            .padding(horizontal = 10.dp)
+                            .padding(horizontal = 10.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Title(
-                            modifier = Modifier
-                                .align(alignment = Alignment.CenterHorizontally),
-                            name = "Loading Indicators"
-                        )
+                        Title(name = "Loading Indicators")
                         LoadingIndicators()
+                        Title(name = "Filled Split Button")
+                        FilledSplitButton()
                     }
                 }
             }
@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
 fun Title(name: String, modifier: Modifier = Modifier) {
     Text(
         modifier = modifier,
-        style = MaterialTheme.typography.headlineMedium,
+        style = MaterialTheme.typography.headlineSmall,
         text = "Hello $name!"
     )
 }
