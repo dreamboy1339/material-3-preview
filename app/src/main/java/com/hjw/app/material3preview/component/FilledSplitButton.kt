@@ -35,7 +35,7 @@ fun FilledSplitButton() {
                     contentDescription = "",
                 )
                 Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-                Text("My Filled Split Button")
+                Text("My Button")
             }
         },
         trailingButton = {

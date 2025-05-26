@@ -37,7 +37,7 @@ fun ElevatedSplitButton() {
                     contentDescription = "",
                 )
                 Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-                Text("My Elevated Split Button")
+                Text("My Button")
             }
         },
         trailingButton = {
