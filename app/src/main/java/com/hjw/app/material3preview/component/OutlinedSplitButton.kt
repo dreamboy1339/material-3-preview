@@ -1,5 +1,6 @@
 package com.hjw.app.material3preview.component
 
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -17,18 +18,22 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.tooling.preview.Preview
-import com.hjw.app.material3preview.ui.theme.Material3PreviewTheme
+import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 @Preview(showBackground = true)
-fun ElevatedSplitButton() {
+fun OutlinedSplitButton() {
+
     var checked by remember { mutableStateOf(false) }
 
     SplitButtonLayout(
+        // Custom Spacing
+        spacing = 8.dp,
         leadingButton = {
-            SplitButtonDefaults.ElevatedLeadingButton(
+            SplitButtonDefaults.OutlinedLeadingButton(
                 onClick = { /* */ },
             ) {
                 Icon(
@@ -37,26 +42,30 @@ fun ElevatedSplitButton() {
                     contentDescription = "",
                 )
                 Spacer(Modifier.size(ButtonDefaults.IconSpacing))
-                Text("My Elevated Split Button")
+                Text("My Button")
             }
         },
         trailingButton = {
-            SplitButtonDefaults.ElevatedTrailingButton(
+            SplitButtonDefaults.OutlinedTrailingButton(
                 checked = checked,
                 onCheckedChange = { checked = it },
             ) {
+                // Rotate the icon based on the check value
+                val rotation: Float by
+                animateFloatAsState(
+                    targetValue = if (checked) 180f else 0f,
+                    label = "Trailing Icon Rotation"
+                )
                 Icon(
                     Icons.Filled.KeyboardArrowDown,
+                    modifier =
+                        Modifier
+                            .size(SplitButtonDefaults.TrailingIconSize)
+                            .graphicsLayer {
+                                this.rotationZ = rotation
+                            },
                     contentDescription = ""
                 )
             }
         })
-}
-
-@Preview
-@Composable
-private fun ElevatedSplitButtionPreview() {
-    Material3PreviewTheme {
-        ElevatedSplitButton()
-    }
 }
