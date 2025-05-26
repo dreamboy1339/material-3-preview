@@ -21,12 +21,13 @@ fun Title(
     Text(
         modifier = modifier
             .fillMaxWidth()
-            .height(50.dp),
+            //.height(24.dp)
+        ,
         text = name,
         style = MaterialTheme.typography.headlineSmall,
-        textAlign = TextAlign.Companion.Center,
-        overflow = TextOverflow.Companion.Visible,
-        autoSize = TextAutoSize.Companion.StepBased()
+        textAlign = TextAlign.Center,
+        //overflow = TextOverflow.Visible,
+        //autoSize = TextAutoSize.StepBased()
     )
 }
 
