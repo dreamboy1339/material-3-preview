@@ -4,13 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.hjw.app.material3preview.component.LoadingIndicators
 import com.hjw.app.material3preview.ui.theme.Material3PreviewTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,10 +25,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             Material3PreviewTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Column(
+                        modifier = Modifier
+                            .padding(innerPadding)
+                            .padding(horizontal = 10.dp)
+                    ) {
+                        Title(
+                            modifier = Modifier
+                                .align(alignment = Alignment.CenterHorizontally),
+                            name = "Loading Indicators"
+                        )
+                        LoadingIndicators()
+                    }
                 }
             }
         }
@@ -31,17 +44,18 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Title(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        modifier = modifier,
+        style = MaterialTheme.typography.headlineMedium,
+        text = "Hello $name!"
     )
 }
 
-@Preview(showBackground = true)
+@Preview
 @Composable
-fun GreetingPreview() {
+private fun TitlePreview() {
     Material3PreviewTheme {
-        Greeting("Android")
+        Title(name = "Android")
     }
 }
