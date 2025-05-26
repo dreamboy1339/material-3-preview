@@ -9,7 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.hjw.app.material3preview.BottomNavItem
+import com.hjw.app.material3preview.screen.BottomNavItem
 
 @Composable
 fun AppBottomNavigationBar(

@@ -10,8 +10,10 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.hjw.app.material3preview.screen.BottomNavItem
 import com.hjw.app.material3preview.screen.CenteredContent
 import com.hjw.app.material3preview.screen.ComponentsScreen
+import com.hjw.app.material3preview.screen.OverflowingVerticalFloatingToolbarSample
 import com.hjw.app.material3preview.ui.AppBottomNavigationBar
 import com.hjw.app.material3preview.ui.theme.Material3PreviewTheme
 
@@ -20,7 +22,7 @@ fun MainScreen() {
     val navController = rememberNavController()
     val items = listOf(
         BottomNavItem.Components,
-        BottomNavItem.Favorites,
+        BottomNavItem.VerticalFloatingToolbar,
         BottomNavItem.Settings
     )
 
@@ -53,11 +55,8 @@ fun MainScreen() {
             composable(BottomNavItem.Components.route) {
                 ComponentsScreen(innerPadding)
             }
-            composable(BottomNavItem.Favorites.route) {
-                CenteredContent(
-                    text = "Favorites Screen",
-                    modifier = Modifier.padding(innerPadding)
-                )
+            composable(BottomNavItem.VerticalFloatingToolbar.route) {
+                OverflowingVerticalFloatingToolbarSample()
             }
             composable(BottomNavItem.Settings.route) {
                 CenteredContent(
